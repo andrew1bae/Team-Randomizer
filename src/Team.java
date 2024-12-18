@@ -19,7 +19,7 @@ public class Team {
     }
 
     public void getTeamFromFile() throws FileNotFoundException {
-        File file = new File("./Resources/Players.txt");
+        File file = new File("./import/Players.txt");
         Scanner scanner = new Scanner(file);
         String temp;
         if(!file.exists()) {
@@ -33,5 +33,17 @@ public class Team {
             players.add(new Player(tempPlayer[0], Double.parseDouble(tempPlayer[1])));
         }
 
+    }
+
+    public String toString() {
+        StringBuilder out = new StringBuilder();
+        for(Player player : players) {
+            out.append(player.toString()).append("\n");
+        }
+        try {
+            out.delete(out.length() - 1, out.length());
+        } catch (Exception e) {
+        }
+        return out.toString();
     }
 }
