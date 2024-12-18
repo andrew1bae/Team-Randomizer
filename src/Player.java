@@ -26,4 +26,7 @@ public class Player {
     public void setWeight(Double weight) {
         this.weight = weight;
     }
+    public String toString() {
+        return name + " | " + weight;
+    }
 }
