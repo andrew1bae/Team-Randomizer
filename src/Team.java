@@ -30,7 +30,11 @@ public class Team {
         while(scanner.hasNextLine()) {
             temp = scanner.nextLine();
             String[] tempPlayer = temp.split("\\|");
-            players.add(new Player(tempPlayer[0], Double.parseDouble(tempPlayer[1])));
+            if(tempPlayer.length == 3 && tempPlayer[2].equals("*")) {
+                players.add(new TeamCaptain(tempPlayer[0], Double.parseDouble(tempPlayer[1])));
+            } else {
+                players.add(new Player(tempPlayer[0], Double.parseDouble(tempPlayer[1])));
+            }
         }
 
     }
