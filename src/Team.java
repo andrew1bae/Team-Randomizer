@@ -3,7 +3,7 @@ import java.io.FileNotFoundException;
 import java.util.*;
 
 public class Team {
-    List<Player> players;
+    private List<Player> players;
 
     //constructor
     public Team() {
