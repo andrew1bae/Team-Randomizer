@@ -1,0 +1,20 @@
+{
+  "teamName" : "Johns",
+  "players" : [ {
+    "name" : "Chonk",
+    "weight" : 5.2,
+    "isTeamCaptain" : false
+  }, {
+    "name" : "Smurf",
+    "weight" : 6.9,
+    "isTeamCaptain" : false
+  }, {
+    "name" : "Jihf",
+    "weight" : 6.1,
+    "isTeamCaptain" : true
+  }, {
+    "name" : "Junior",
+    "weight" : 7.2,
+    "isTeamCaptain" : false
+  } ]
+}

@@ -1,0 +1,16 @@
+{
+  "teamName" : "",
+  "players" : [ {
+    "name" : "Chonk",
+    "weight" : 5.2
+  }, {
+    "name" : "Smurf",
+    "weight" : 6.9
+  }, {
+    "name" : "Jihf",
+    "weight" : 6.1
+  }, {
+    "name" : "Junior",
+    "weight" : 7.2
+  } ]
+}

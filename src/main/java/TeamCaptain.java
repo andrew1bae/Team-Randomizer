@@ -1,4 +1,5 @@
 public class TeamCaptain extends Player{
+    private final Boolean isTeamCaptain = true;
     public TeamCaptain(){
         super();
     }
@@ -7,6 +8,11 @@ public class TeamCaptain extends Player{
     }
     public TeamCaptain(Player player) {
         super(player.getName(), player.getWeight());
+    }
+
+    @Override
+    public Boolean getIsTeamCaptain() {
+        return isTeamCaptain;
     }
 
     public String toString() {
