@@ -1,0 +1,4 @@
+Chonk|5.2
+Smurf|6.9
+Jihf|6.1|*
+Junior|7.2

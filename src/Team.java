@@ -1,6 +1,8 @@
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.*;
+import java.io.FileWriter;
 
 public class Team {
     private List<Player> players;
@@ -36,7 +38,23 @@ public class Team {
                 players.add(new Player(tempPlayer[0], Double.parseDouble(tempPlayer[1])));
             }
         }
+        scanner.close();
+    }
 
+    public void writeTeamToFile() {
+        try {
+            FileWriter writer = new FileWriter("./export/Players.txt");
+            for(Player player : players) {
+                if(player instanceof TeamCaptain) {
+                    writer.write(player.getName() + "|" + player.getWeight() + "|*\n");
+                } else {
+                    writer.write(player.getName() + "|" + player.getWeight() + "\n");
+                }
+            }
+            writer.close();
+        } catch (Exception e) {
+            System.out.println("Error Has Occured");
+        }
     }
 
     public String toString() {

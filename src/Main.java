@@ -6,6 +6,7 @@ public class Main {
         Player test2 = new TeamCaptain(test);
         Team testing = new Team();
         testing.getTeamFromFile();
+        testing.writeTeamToFile();
         System.out.println(testing);
         //System.out.println(test.getName());
 //        System.out.println(test2.getName());
