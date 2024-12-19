@@ -1,8 +1,9 @@
+package components;
+
 public class Player {
     //Vars
     private String name;
     private Double weight;
-    private final Boolean isTeamCaptain = false;
 
     //Constructors
     public Player() {
@@ -26,7 +27,7 @@ public class Player {
         return weight;
     }
     public Boolean getIsTeamCaptain() {
-        return isTeamCaptain;
+        return false;
     }
     public void setName(String name) {
         this.name = name;

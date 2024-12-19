@@ -1,12 +1,10 @@
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.databind.SerializationFeature;
-import com.fasterxml.jackson.databind.node.ObjectNode;
+package main;
 
-import java.io.File;
-import java.io.FileNotFoundException;
+import components.*;
+
 import java.io.IOException;
 
-public class Main {
+public class LoLTeamShuffler {
     public static void main(String[] args) throws IOException {
         Player test = new Player("Chuck", 7.8);
         Team testing = new Team("Johns");

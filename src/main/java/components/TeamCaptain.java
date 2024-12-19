@@ -1,5 +1,6 @@
+package components;
+
 public class TeamCaptain extends Player{
-    private final Boolean isTeamCaptain = true;
     public TeamCaptain(){
         super();
     }
@@ -12,7 +13,7 @@ public class TeamCaptain extends Player{
 
     @Override
     public Boolean getIsTeamCaptain() {
-        return isTeamCaptain;
+        return true;
     }
 
     public String toString() {

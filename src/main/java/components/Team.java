@@ -1,3 +1,5 @@
+package components;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,7 +13,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.io.FileWriter;
 
 public class Team {
-    private List<Player> players;
+    private final List<Player> players;
     private String teamName;
 
     //constructors
@@ -152,7 +154,7 @@ public class Team {
         }
         try {
             out.delete(out.length() - 1, out.length());
-        } catch (Exception e) {
+        } catch (Exception _) {
         }
         return out.toString();
     }
