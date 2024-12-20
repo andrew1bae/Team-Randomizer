@@ -1,5 +1,8 @@
 package components;
 
+/**
+ * Child of Player class
+ */
 public class TeamCaptain extends Player{
     public TeamCaptain(){
         super();
@@ -11,6 +14,10 @@ public class TeamCaptain extends Player{
         super(player.getName(), player.getWeight());
     }
 
+    /**
+     * Returns a boolean if the player is a team captain
+     * @return true (TeamCaptain is a child of Player)
+     */
     @Override
     public Boolean getIsTeamCaptain() {
         return true;

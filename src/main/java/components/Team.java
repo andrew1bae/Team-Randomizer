@@ -12,6 +12,9 @@ import com.fasterxml.jackson.databind.node.ArrayNode;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.io.FileWriter;
 
+/**
+ * A collection of players that has a name
+ */
 public class Team {
     private final List<Player> players;
     private String teamName;
@@ -43,16 +46,35 @@ public class Team {
     }
 
     //Methods
+
+    /**
+     * Returns a String of the name of the team
+     * @return team name
+     */
     public String getTeamName() {
         return teamName;
     }
+
+    /**
+     * Sets the name of the team
+     * @param name - name that you want the team to be
+     */
     public void setTeamName(String name) {
         teamName = name;
     }
 
+    /**
+     * Returns an ArrayList of Players
+     * @return List of Players
+     */
     public List<Player> getPlayers() {
         return players;
     }
+
+    /**
+     * Adds a player to the players List
+     * @param player - player you want to add
+     */
     public void addPlayer(Player player) {
         if(getNames().contains(player.getName())) {
             System.out.println("Insertion Failed: Player Exists");
@@ -60,6 +82,11 @@ public class Team {
         }
         players.add(player);
     }
+
+    /**
+     * Removes a player from the List using a String of the name that you want to remove
+     * @param name - name of the player you want to remove
+     */
     public void removePlayer(String name) {
         for(Player player: players) {
             if(player.getName().equals(name)) {
@@ -68,6 +95,11 @@ public class Team {
             }
         }
     }
+
+    /**
+     * Returns an ArrayList of the Names of the Players
+     * @return player names
+     */
     public List<String> getNames() {
         List<String> names = new ArrayList<String>();
         for(Player player : players) {
@@ -76,7 +108,10 @@ public class Team {
         return names;
     }
 
-
+    /**
+     * Looks for Players.txt file in the import folder and adds the players to the players ArrayList
+     * @throws FileNotFoundException
+     */
     public void getTeamFromTXT() throws FileNotFoundException {
         File file = new File("./import/Players.txt");
         Scanner scanner = new Scanner(file);
@@ -98,6 +133,9 @@ public class Team {
         scanner.close();
     }
 
+    /**
+     * Exports the ArrayList players to a txt file
+     */
     public void writeTeamToTXT() {
         try {
             FileWriter writer = new FileWriter("./export/Players.txt");
@@ -114,6 +152,10 @@ public class Team {
         }
     }
 
+    /**
+     * Converts the attributes of the Team to a JSON File and stores it in the exports folder
+     * @throws IOException
+     */
     public void exportTeamToJSON() throws IOException {
         ObjectMapper mapper = new ObjectMapper();
         mapper.enable(SerializationFeature.INDENT_OUTPUT);
@@ -131,6 +173,11 @@ public class Team {
         mapper.writeValue(new File("./export/" + teamName +".json"), mainNode);
     }
 
+    /**
+     * Reads a JSON file and stores information as a Team
+     * @param teamNameJSON - name of the file
+     * @throws IOException
+     */
     public void importTeamFromJSON(String teamNameJSON) throws IOException {
         File file = new File("./import/" + teamNameJSON + ".json");
         ObjectMapper mapper = new ObjectMapper();
